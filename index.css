@@ -1,21 +1,90 @@
 body{
-    background-color: #FE5F55;
+/* background-color: #FE5F55; */
+background-image:url('images/background-pg1.gif');
+background-repeat:no-repeat;
+background-size: cover;
 }
+footer {
+/* width: 100%;
+height: 15vh;
+background-color: white;
+display: flex;
+justify-content: flex-end; */
+position:absolute;
+bottom:0;
+width: 100%;
+height:17px;
+background:#6cf;
+position: fixed;
+}
+
+@keyframes shake {
+    0% { transform: translate(2px, 2px) rotate(0deg); }
+    10% { transform: translate(-2px, -4px) rotate(-1deg); }
+    20% { transform: translate(-6px, 1px) rotate(1deg); }
+    30% { transform: translate(6px, 4px) rotate(0deg); }
+    40% { transform: translate(4px, -4px) rotate(1deg); }
+    50% { transform: translate(-4px, 4px) rotate(-1deg); }
+    60% { transform: translate(-6px, 2px) rotate(0deg); }
+    70% { transform: translate(6px, 2px) rotate(-1deg); }
+    80% { transform: translate(-2px, -2px) rotate(1deg); }
+    90% { transform: translate(2px, 4px) rotate(0deg); }
+    100% { transform: translate(2px, -4px) rotate(-1deg); }
+  }
+
+.pain{
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+  
+    /* When the animation is finished, start again */
+    animation-iteration-count: 4;
+}
+
+
+
+    
+
+
+  
+ 
 #page1{
 display: flex;
 justify-content: space-evenly;
 }
 #page1{
-    background-color: #D6D1B1;
+    /* background-color: #D6D1B1; */
 }
 #middleContainer{
 width: 50vh;
 height: 50vh;
 display: flex;
 justify-content: space-evenly;
-background-color: #C7EFCF;
+/* background-color: #C7EFCF; */
+border-radius: 25px;
+
+background: linear-gradient(-45deg, #ee7752, #a5e73c, #23a6d5, #23d5ab);
+background-size: 400% 400%;
+animation: gradient 15s ease infinite;
 }
-#startbutton{
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#player1Choice, #player2Choice {
+    background-color: aliceblue;
+    width: fit-content;
+}
+
+#start{
 text-align: center;
 margin: auto;
 }
@@ -25,14 +94,15 @@ margin: auto;
     margin: auto;
     width: 80%;
     height: 800px;
-    border: 2px solid black
+    border: 2px solid black;
+    background-color: #EEF5DB;
 }
 #arena {
 width:100%;
 height: 635px;
+z-index: -100;
 }
 #p1-moveset {
-display: inline-block;
 position:absolute;
 bottom: 0px;
 width: 265px;
@@ -47,6 +117,21 @@ height: 160px;
     height: 160px;
     }
 
+    #movesets {
+width: 100%;
+height: 162px;
+background-color: #EEF5DB;
+    }
+#test {
+    margin: auto;
+    background-color: #EEF5DB;
+    position:absolute;
+    bottom: 0px;
+    left: 270px;
+   width:60%;
+    height: 158px;
+    }
+
 .moves {
     
     width:130px;
@@ -56,26 +141,48 @@ height: 160px;
     width: 15vh;
 height: 15vh;
 }
+/* =============HEALTH BAR ============================= */
 
-#player1hp {
-    background:whitesmoke;
-    border: 2px solid green;
-    width:200px;
-    height: 40px;
+.stats {
+    background-color: #C7EFCF;
+    width:213px;
+    height: 49px;
     position: absolute;
     top:300px;
-    left:100px;
+    left:50px;
 }
 
-#player2hp {
-    background: whitesmoke;
-    border: 2px solid green;
-    width:200px;
-    height: 40px;
+.stats2 {
+    background-color: #C7EFCF;
+    width:213px;
+    height: 49px;
     position: absolute;
     top:100px;
     right:50px;
 }
+
+.healthLabel {
+    font: 18px arial;
+ font-weight: bold;
+}
+
+.hpBorder {
+ width: 200px;
+ height: 20px;
+ border: 3px solid;
+ border-color: black;
+
+}
+
+.hpBar {
+    width:200px;
+    height: 20px;
+    background-color: green;
+}
+
+
+/* =================================================== */
+
 
 progress[value] {
     width:100px;
@@ -87,24 +194,45 @@ width: 150px;
 height:150px;
 }
 
+
+
 /* POKEMON DISPLAY IN PAGE 2 */
 
-/* PLAYER 1 HAUNTER */
-.haunter1ImgPage2 {
-    border: 2px dotted purple;
+/* Grouped into Player 1 and Player 2 Battle Icons for efficiency -- Aldo */
+
+/*Selection Page */
+/*Mirror Left Side Characters on Selection */
+.leftSelectionChar {
+    transform: scaleX(-1);
+    height: 250px;
+    width: 250px;
+}
+
+.rightSelectionChar {
+    height: 250px;
+    width: 250px;
+}
+/* PLAYER 1 BATTLE ICON */
+
+.battleIcons1 {
+    transform: scaleX(-1);
     position: absolute;
+    height: 300px;
+    width: 300px;
     top:350px;
-    left:170px;
+    left:150px;
   }
-  /* PLAYER 2 HAUNTER */
-  .haunter2ImgPage2 {
-    border: 2px dotted purple;
+
+  /* PLAYER 2 BATTLE ICON */
+.battleIcons2 {
     position: absolute;
+    height: 300px;
+    width: 300px;
     top:150px;
     right:100px;
   }
   
-  /* PLAYER 1 JIGGLYPUFF */
+  /* PLAYER 1 JIGGLYPUFF
   .jigglypuff1ImgPage2 {
     border: 2px dotted purple;
     position: absolute;
@@ -112,10 +240,29 @@ height:150px;
     left:170px;
   }
   
-  /* PLAYER 2 JIGGLYPUFF */
-  .jigglypuff2ImgPage2 {
+PLAYER 2 JIGGLYPUFF */
+  /* .jigglypuff2ImgPage2 {
     border: 2px dotted purple;
     position: absolute;
     top:150px;
     right:100px;
+  } */
+
+
+  /* MEDIA======================================== */
+  @media screen and (max-width: 1600px) {
+    #test {
+      width: 50%;
+      border: 2px solid black;
+    }
   }
+
+/* PLAYERS TURN INDICATOR */
+#print {
+    width:100px;
+    height: 20px;
+    background-color: orange;
+    margin-left: 1000px;
+    position:relative; 
+    bottom:270px;
+}

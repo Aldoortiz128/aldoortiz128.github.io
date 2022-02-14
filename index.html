@@ -13,6 +13,12 @@
 
 </head>
 <body>
+  <audio controls autoplay loop id = 'theme'>
+    <source src="8bituniversepokemon.mp3" type="audio/mp3">
+    Your browser does not support the audio tag.
+  </audio>
+
+  
   <h1 id = "title">Choose your Pokemon</h1>
   <!-- this div holds everything pg1 -->
   <div id = "page1">
@@ -21,6 +27,7 @@
   <div id = "leftContainer">
     <h3 id = "player1Choice">Player 1 Select</h3>
     <h3 id = "player1Icon"></h3>
+    
   </div>
   <audio id="myAudio">
     <source src="https://www.youtube.com/embed/JuYeHPFR3f0" type="audio/mpeg">
@@ -29,10 +36,10 @@
   <div id = "middleContainer">
     <div id = "character">
       
-      <img id = "char1" src="https://archives.bulbagarden.net/media/upload/6/6d/Spr_5b_093.png" alt="Haunter">
+      <img id = "char1" src="images/haunter-front-gif.png" alt="Haunter" width="600px" height="600px">
     </div>
     <div id = "character">
-      <img id = "char2" src="https://archives.bulbagarden.net/media/upload/f/fc/Spr_2c_039.png" alt="jigglypuff">
+      <img id = "char2" src="images/Jiggs.gif" alt="jigglypuff" width="600px" height="600px"> 
     </div>
   </div>
 <!-- this holds second player choice and pokemon -->
@@ -42,20 +49,26 @@
 </div>
   </div>
     <!-- this holds the start button -->
-<div id = "startbutton">
-  <button id = "start">Start Game</button>
+<div id = "start">
+  <button id = "startButton">Start Game</button>
 </div>
   <!-- page 2 -->
   <div id = 'page2'>
-    <img id = "arena" src="https://cutewallpaper.org/21/battle-backgrounds/Pokemon-background-battle-8-Background-Check-All.png" alt="Arena">
+    <img id = "arena" src="images/battlefield.png" alt="Arena">
 <!-- this holds the movesets -->
 <div id = movesets>
+
     <div id = "p1-moveset">
       <button id = "moveset1" class = "moves"></button>
       <button id = "moveset2" class = "moves"></button>
       <button id = "moveset3" class = "moves"></button>
       <button id = "moveset4" class = "moves"></button>
     </div>
+
+    <div id = "test">
+      <p id = "text"></p>
+    </div>
+
     <div id = "p2-moveset">
       <button id = "moveset5" class = "moves"></button>
       <button id = "moveset6" class = "moves"></button>
@@ -67,6 +80,21 @@
     <h2 id = "winner-message">You win!!</h2>
   </div>
 <!-- this holds the first health bar -->
+<div class = "stats" class = "stat">
+<span class = "healthLabel">Health</span><br>
+   <div class = "hpBorder">
+    <div id = "megaManHP" class = "hpBar"></div>
+  </div>
+  </div>
+
+  <div class = "stats2">
+    <span class = "healthLabel">Health</span><br>
+       <div class = "hpBorder">
+        <div id = "veigHP" class = "hpBar"></div>
+      </div>
+      </div>
+
+
   <div id = player1hp>
   <progress id="health1" value="200" max="200"></progress>
 </div>
@@ -80,5 +108,5 @@
 </body>
 <footer>
 Aldo Ortiz, Damian Kohut & Mohammad Islam's Project @ Marcy Lab 2022
-</footer>
+</footer id = footer>
 </html>
