@@ -4,20 +4,34 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Pokemon Battles</title>
   <link rel="stylesheet" type="text/css" href="index.css">
   <script defer src="index.js"></script>
-  <script defer src="damian.js"></script>
-  <script defer src="aldo.js"></script>
-  <script defer src="mohammad.js"></script>
-
+  <script defer src="pokemonClass.js"></script>
+  <!-- <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet"> -->
+  <!-- <style>
+    @import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+  </style> -->
+  <link rel="icon" href="images/tab-icon.png">
 </head>
+
 <body>
-  <audio controls autoplay loop id = 'theme'>
-    <source src="8bituniversepokemon.mp3" type="audio/mp3">
+  <div id = "introDiv"><img id = "introImage" src = "images/intro.gif"></div><br>
+  <script type = "text/javascript">
+      setTimeout(function() {
+          document.getElementById("introDiv").style.display="none";
+      }, 3700);  // 3.7 seconds is 3700
+  </script> 
+  <audio id = "theme" controls loop autoplay>
+    <source src="sounds/8bituniversepokemon.mp3" type="audio/mp3">
     Your browser does not support the audio tag.
   </audio>
-
+  <form id = "form" onsubmit="return false">
+    <label for="fname">Have A Cheat Code?:</label><br>
+    <input type="text" id="code" name="code" value="" onsubmit="return false" autocomplete="off"><br>
+    <!-- <input type="submit" value="Submit"> -->
+  </form> 
+  
   
   <h1 id = "title">Choose your Pokemon</h1>
   <!-- this div holds everything pg1 -->
@@ -25,7 +39,7 @@
   
     <!-- this holds player 1 choice  -->
   <div id = "leftContainer">
-    <h3 id = "player1Choice">Player 1 Select</h3>
+    <h3 id = "player1Choice">Trainer 1 Select</h3>
     <h3 id = "player1Icon"></h3>
     
   </div>
@@ -33,7 +47,7 @@
     <source src="https://www.youtube.com/embed/JuYeHPFR3f0" type="audio/mpeg">
   </audio>
   <!-- this holds the pokemon  -->
-  <div id = "middleContainer">
+  <div id = "middleContainer" class = "DivToScroll DivWithScroll" >
     <div id = "character">
       
       <img id = "char1" src="images/haunter-front-gif.png" alt="Haunter" width="600px" height="600px">
@@ -41,17 +55,43 @@
     <div id = "character">
       <img id = "char2" src="images/Jiggs.gif" alt="jigglypuff" width="600px" height="600px"> 
     </div>
+  <div id = "character">
+    <img id = "char3" src="images/Garchomp.png" alt="garchomp" width="600px" height="600px"> 
+  </div>
+  <div id = "character">
+    <img id = "char4" src="images/Arcanine1.png" alt="arcanine" width="600px" height="600px"> 
+  </div>
+  <div id = "character">
+    <img id = "char5" src="images/venusaur.png" alt="venusaur" width="600px" height="600px"> 
+  </div>
+  <div id = "character">
+    <img id = "char6" src="images/pika.png" alt="pikachu" width="600px" height="600px"> 
+  </div>
+<div id = "character">
+    <img id = "char7" src="images/wartortle.gif" alt="wartotle" width="600px" height="600px"> 
+  </div> 
+  <div id = "character">
+    <img id = "char8" src="images/alakazam.png" alt="alakazam" width="600px" height="600px"> 
+  </div>
+  <div id = "character">
+    <img id = "char9" src="images/onyx.png" alt="onyx" width="600px" height="600px"> 
+  </div>
+  <div id = "character">
+    <img id = "char10" src="images/shinyraikou.png" alt="onyx" width="600px" height="600px"> 
+  </div>
   </div>
 <!-- this holds second player choice and pokemon -->
   <div id = "rightContainer">
-  <h3 id = "player2Choice">Player 2 Select</h3>
+  <h3 id = "player2Choice">Trainer 2 Select</h3>
   <h3 id = "player2Icon"></h3>
 </div>
   </div>
     <!-- this holds the start button -->
-<div id = "start">
+<div id = "start" style = "margin:2% 0">
   <button id = "startButton">Start Game</button>
 </div>
+
+
   <!-- page 2 -->
   <div id = 'page2'>
     <img id = "arena" src="images/battlefield.png" alt="Arena">
@@ -94,19 +134,12 @@
       </div>
       </div>
 
-
-  <div id = player1hp>
-  <progress id="health1" value="200" max="200"></progress>
-</div>
-
-<!-- this holds the second health bar  -->
-<div id = player2hp>
-  <progress id="health2" value="200" max="200"></progress>
+<div>
   <p id="print"></p>
 </div>
 </div>
 </body>
 <footer>
-Aldo Ortiz, Damian Kohut & Mohammad Islam's Project @ Marcy Lab 2022
-</footer id = footer>
+Aldo Ortiz, Damian Kohut & Mohammad Islam's Project @Marcy Lab 2022
+</footer id = footer style = "margin:2% 0">>
 </html>
